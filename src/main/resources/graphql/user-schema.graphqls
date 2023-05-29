@@ -1,0 +1,25 @@
+type User {
+    id: Int!
+    name: String!
+    email: String!
+    address: Address!
+}
+
+type Address {
+    addressLine1: String!
+    district: String!
+    state: String!
+    pincode: String!
+
+}
+# The Root Query for the application
+type Query {
+    findAll: [User]
+    findById(id: Int): User
+}
+
+# The Root Mutation for the application
+type Mutation {
+    createUser  (name: String!, email: String!, address: String) : User!
+}
+
